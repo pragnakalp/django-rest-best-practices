@@ -14,52 +14,52 @@ This repository contains **10 comprehensive guides** covering essential best pra
 
 ## 📚 Documentation Structure
 
-### 1. [API Design and Architecture](01-API-Design-and-Architecture.md)
+### 1. [API Design and Architecture](API-Design-and-Architecture.md)
 Foundational principles for designing RESTful APIs, including URI design, HTTP methods, project structure, and the Service/Selector pattern for business logic separation.
 
 **Coverage:** RESTful principles • Project structure • Pagination strategies • Service layer pattern • API versioning architecture
 
-### 2. [Serializers Best Practices](02-Serializers-Best-Practices.md)
+### 2. [Serializers Best Practices](Serializers-Best-Practices.md)
 Comprehensive guide to serializer usage, field selection security, validation strategies, and handling nested relationships.
 
 **Coverage:** Serializer types • Field selection (allowlist approach) • Validation patterns • Nested serializers • Performance optimization
 
-### 3. [Views and ViewSets](03-Views-and-ViewSets.md)
+### 3. [Views and ViewSets](Views-and-ViewSets.md)
 Best practices for implementing efficient views, choosing between ViewSets and generic views, and optimizing query performance.
 
 **Coverage:** ViewSets vs Views • URL routing • Custom actions • Filtering & searching • Query optimization • Error handling
 
-### 4. [Authentication and Permissions](04-Authentication-and-Permissions.md)
+### 4. [Authentication and Permissions](Authentication-and-Permissions.md)
 Complete guide to authentication schemes with JWT as the recommended standard, permission classes, and advanced RBAC implementation.
 
 **Coverage:** JWT authentication (recommended) • Permission classes • Custom permissions • Object-level authorization • RBAC systems
 
-### 5. [Security Best Practices](05-Security-Best-Practices.md)
+### 5. [Security Best Practices](Security-Best-Practices.md)
 Security guidelines based on OWASP API Security Top 10, covering authorization, data exposure, rate limiting, and secure configuration.
 
 **Coverage:** OWASP API Security Top 10 • Object-level authorization • Rate limiting strategies • Injection prevention • Secret management • Security monitoring
 
-### 6. [Performance and Optimization](06-Performance-and-Optimization.md)
+### 6. [Performance and Optimization](Performance-and-Optimization.md)
 Strategies for building high-performance APIs, including query optimization, caching, indexing, and asynchronous task processing.
 
 **Coverage:** N+1 query solutions • Caching strategies • Database indexing • Bulk operations • Asynchronous tasks • Performance monitoring
 
-### 7. [API Versioning](07-API-Versioning.md)
+### 7. [API Versioning](API-Versioning.md)
 Architectural considerations for API versioning, with URL path versioning as the recommended approach, plus deprecation strategies.
 
 **Coverage:** Versioning strategies • URL path versioning (recommended) • Version-specific logic • Deprecation policies • Migration strategies
 
-### 8. [API Documentation Best Practices](08-API-Documentation-Best-Practices.md)
+### 8. [API Documentation Best Practices](API-Documentation-Best-Practices.md)
 Guide to creating comprehensive API documentation using drf-spectacular for OpenAPI 3 schema generation and interactive docs.
 
 **Coverage:** OpenAPI 3 with drf-spectacular • Documenting endpoints • Request/response examples • Authentication docs • Error documentation
 
-### 9. [Error Handling and Status Codes](09-Error-Handling-and-Status-Codes.md)
+### 9. [Error Handling and Status Codes](Error-Handling-and-Status-Codes.md)
 Production-grade error handling patterns, standard error response format, and correct HTTP status code usage.
 
 **Coverage:** Standard error format • HTTP status codes • Domain exceptions • Global exception handler • Safe logging practices
 
-### 10. [Testing Best Practices](10-Testing-Best-Practices.md)
+### 10. [Testing Best Practices](Testing-Best-Practices.md)
 Comprehensive testing strategies for DRF APIs, including CRUD operations, authentication, permissions, and performance testing.
 
 **Coverage:** Testing CRUD operations • JWT authentication tests • Permission testing • Factory pattern • Performance testing • Code coverage
@@ -83,20 +83,20 @@ Comprehensive testing strategies for DRF APIs, including CRUD operations, authen
 ### Learning Path
 
 **For Beginners:**
-1. Start with `01-API-Design-and-Architecture.md`
-2. Learn serializers in `02-Serializers-Best-Practices.md`
-3. Understand views in `03-Views-and-ViewSets.md`
-4. Implement security with `04-Authentication-and-Permissions.md`
+1. Start with `API-Design-and-Architecture.md`
+2. Learn serializers in `Serializers-Best-Practices.md`
+3. Understand views in `Views-and-ViewSets.md`
+4. Implement security with `Authentication-and-Permissions.md`
 
 **For Intermediate Developers:**
-5. Enhance security with `05-Security-Best-Practices.md`
-6. Optimize performance using `06-Performance-and-Optimization.md`
-7. Plan versioning with `07-API-Versioning.md`
+5. Enhance security with `Security-Best-Practices.md`
+6. Optimize performance using `Performance-and-Optimization.md`
+7. Plan versioning with `API-Versioning.md`
 
 **For Production Deployment:**
-8. Document your API with `08-API-Documentation-Best-Practices.md`
-9. Implement error handling from `09-Error-Handling-and-Status-Codes.md`
-10. Test thoroughly using `10-Testing-Best-Practices.md`
+8. Document your API with `API-Documentation-Best-Practices.md`
+9. Implement error handling from `Error-Handling-and-Status-Codes.md`
+10. Test thoroughly using `Testing-Best-Practices.md`
 
 ---
 
