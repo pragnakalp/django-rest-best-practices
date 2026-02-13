@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Authentication and Permissions Best Practices | Django REST Best Practices</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://pragnakalp.github.io/django-rest-best-practices/Authentication-and-Permissions"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Authentication and Permissions Best Practices | Django REST Best Practices"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/django-rest-best-practices/img/pk-color-128.png"><link data-rh="true" rel="canonical" href="https://pragnakalp.github.io/django-rest-best-practices/Authentication-and-Permissions"><link data-rh="true" rel="alternate" href="https://pragnakalp.github.io/django-rest-best-practices/Authentication-and-Permissions" hreflang="en"><link data-rh="true" rel="alternate" href="https://pragnakalp.github.io/django-rest-best-practices/Authentication-and-Permissions" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Authentication and Permissions Best Practices","item":"https://pragnakalp.github.io/django-rest-best-practices/Authentication-and-Permissions"}]}</script><link rel="stylesheet" href="/django-rest-best-practices/assets/css/styles.b0092fe2.css">
 <script src="/django-rest-best-practices/assets/js/runtime~main.41c4e0ce.js" defer="defer"></script>
-<script src="/django-rest-best-practices/assets/js/main.da86f03e.js" defer="defer"></script>
+<script src="/django-rest-best-practices/assets/js/main.d9be35b9.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -419,11 +419,41 @@
 <li class=""><strong>Maintain compatibility:</strong> Ensure smooth transition between systems</li>
 </ol>
 <p>Following these practices ensures your API is secure, scalable, and properly controls access to resources using the most appropriate permission system for your application&#x27;s needs.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/pragnakalp/django-rest-best-practices/tree/main/docs/Authentication-and-Permissions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/django-rest-best-practices/Views-and-ViewSets"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Views and ViewSets Best Practices</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/django-rest-best-practices/Security-Best-Practices"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Security Best Practices</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#authentication" class="table-of-contents__link toc-highlight">Authentication</a><ul><li><a href="#understanding-authentication" class="table-of-contents__link toc-highlight">Understanding Authentication</a></li><li><a href="#setting-up-authentication" class="table-of-contents__link toc-highlight">Setting Up Authentication</a></li><li><a href="#authentication-schemes-detailed-comparison" class="table-of-contents__link toc-highlight">Authentication Schemes: Detailed Comparison</a></li><li><a href="#comprehensive-comparison-matrix" class="table-of-contents__link toc-highlight">Comprehensive Comparison Matrix</a></li><li><a href="#decision-tree" class="table-of-contents__link toc-highlight">Decision Tree</a></li><li><a href="#best-practice-jwt-authentication-recommended" class="table-of-contents__link toc-highlight">Best Practice: JWT Authentication (Recommended)</a></li><li><a href="#alternative-multiple-authentication-schemes" class="table-of-contents__link toc-highlight">Alternative: Multiple Authentication Schemes</a></li><li><a href="#real-world-recommendations" class="table-of-contents__link toc-highlight">Real-World Recommendations</a></li><li><a href="#per-view-authentication" class="table-of-contents__link toc-highlight">Per-View Authentication</a></li><li><a href="#authentication-best-practices" class="table-of-contents__link toc-highlight">Authentication Best Practices</a></li></ul></li><li><a href="#permissions" class="table-of-contents__link toc-highlight">Permissions</a><ul><li><a href="#understanding-permissions" class="table-of-contents__link toc-highlight">Understanding Permissions</a></li><li><a href="#setting-up-permissions" class="table-of-contents__link toc-highlight">Setting Up Permissions</a></li><li><a href="#permission-approaches" class="table-of-contents__link toc-highlight">Permission Approaches</a></li><li><a href="#built-in-permission-classes" class="table-of-contents__link toc-highlight">Built-in Permission Classes</a></li><li><a href="#custom-permission-classes" class="table-of-contents__link toc-highlight">Custom Permission Classes</a></li><li><a href="#advanced-rbac-permission-system" class="table-of-contents__link toc-highlight">Advanced RBAC Permission System</a></li><li><a href="#using-multiple-permissions" class="table-of-contents__link toc-highlight">Using Multiple Permissions</a></li><li><a href="#per-action-permissions" class="table-of-contents__link toc-highlight">Per-Action Permissions</a></li><li><a href="#object-level-permissions" class="table-of-contents__link toc-highlight">Object-Level Permissions</a></li><li><a href="#permission-best-practices" class="table-of-contents__link toc-highlight">Permission Best Practices</a></li></ul></li><li><a href="#third-party-authentication-packages" class="table-of-contents__link toc-highlight">Third-Party Authentication Packages</a><ul><li><a href="#django-rest-auth" class="table-of-contents__link toc-highlight">django-rest-auth</a></li><li><a href="#django-allauth" class="table-of-contents__link toc-highlight">django-allauth</a></li><li><a href="#oauth2" class="table-of-contents__link toc-highlight">OAuth2</a></li></ul></li><li><a href="#security-considerations-1" class="table-of-contents__link toc-highlight">Security Considerations</a><ul><li><a href="#1-secure-token-storage" class="table-of-contents__link toc-highlight">1. Secure Token Storage</a></li><li><a href="#2-token-expiration" class="table-of-contents__link toc-highlight">2. Token Expiration</a></li><li><a href="#3-rate-limiting-authentication-endpoints" class="table-of-contents__link toc-highlight">3. Rate Limiting Authentication Endpoints</a></li><li><a href="#4-https-only" class="table-of-contents__link toc-highlight">4. HTTPS Only</a></li><li><a href="#5-validate-user-input" class="table-of-contents__link toc-highlight">5. Validate User Input</a></li></ul></li><li><a href="#testing-authentication-and-permissions" class="table-of-contents__link toc-highlight">Testing Authentication and Permissions</a><ul><li><a href="#testing-authentication" class="table-of-contents__link toc-highlight">Testing Authentication</a></li><li><a href="#testing-permissions" class="table-of-contents__link toc-highlight">Testing Permissions</a></li><li><a href="#testing-rbac-permissions" class="table-of-contents__link toc-highlight">Testing RBAC Permissions</a></li><li><a href="#integration-tests" class="table-of-contents__link toc-highlight">Integration Tests</a></li></ul></li><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a><ul><li><a href="#authentication-1" class="table-of-contents__link toc-highlight">Authentication</a></li><li><a href="#permissions-1" class="table-of-contents__link toc-highlight">Permissions</a></li><li><a href="#migration-strategy-1" class="table-of-contents__link toc-highlight">Migration Strategy</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">
-          Copyright © 2026
-          <a href="https://pragnakalp.com" target="_blank" rel="noopener noreferrer">
-            Pragnakalp Techlabs
-          </a>.
-          All rights reserved.
-        </div></div></div></footer></div>
+            <style>
+              .footer-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 2rem;
+                font-size: 1.1rem;
+                gap: 1rem;
+                line-height: 1.6;
+              }
+              
+              @media (max-width: 768px) {
+                .footer-container {
+                  flex-direction: column;
+                  text-align: center;
+                  justify-content: center;
+                  font-size: 1rem;
+                }
+              }
+            </style>
+            
+            <div class="footer-container">
+              
+              <div>
+                Copyright © 2026
+                <a href="https://pragnakalp.com" target="_blank" rel="noopener noreferrer" style="color: #0ea5e9; text-decoration: none; font-weight: 500; margin-left: 0.25rem;">
+                  Pragnakalp Techlabs
+                </a>. All rights reserved.
+              </div>
+
+              <div>
+                <strong>Contributors:</strong> Rahul, Nikunj, Neel, Meet, Dhvanil, Mansi, Darshit
+              </div>
+
+            </div>
+          </div></div></div></footer></div>
 </body>
 </html>

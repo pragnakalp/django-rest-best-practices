@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Serializers Best Practices | Django REST Best Practices</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://pragnakalp.github.io/django-rest-best-practices/Serializers-Best-Practices"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Serializers Best Practices | Django REST Best Practices"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/django-rest-best-practices/img/pk-color-128.png"><link data-rh="true" rel="canonical" href="https://pragnakalp.github.io/django-rest-best-practices/Serializers-Best-Practices"><link data-rh="true" rel="alternate" href="https://pragnakalp.github.io/django-rest-best-practices/Serializers-Best-Practices" hreflang="en"><link data-rh="true" rel="alternate" href="https://pragnakalp.github.io/django-rest-best-practices/Serializers-Best-Practices" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Serializers Best Practices","item":"https://pragnakalp.github.io/django-rest-best-practices/Serializers-Best-Practices"}]}</script><link rel="stylesheet" href="/django-rest-best-practices/assets/css/styles.b0092fe2.css">
 <script src="/django-rest-best-practices/assets/js/runtime~main.41c4e0ce.js" defer="defer"></script>
-<script src="/django-rest-best-practices/assets/js/main.da86f03e.js" defer="defer"></script>
+<script src="/django-rest-best-practices/assets/js/main.d9be35b9.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -322,11 +322,41 @@ Implement field-specific validation using the <code>validate_&lt;field_name&gt;<
 <li class=""><strong>Initial Data:</strong> Access <code>initial_data</code> when you need raw, unvalidated input</li>
 </ol>
 <p>Following these practices ensures your serializers are secure, maintainable, and performant.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/pragnakalp/django-rest-best-practices/tree/main/docs/Serializers-Best-Practices.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/django-rest-best-practices/API-Design-and-Architecture"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">API Design &amp; Architecture Best Practices</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/django-rest-best-practices/Views-and-ViewSets"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Views and ViewSets Best Practices</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#understanding-serializer-types" class="table-of-contents__link toc-highlight">Understanding Serializer Types</a><ul><li><a href="#three-types-of-serializers-based-on-usage" class="table-of-contents__link toc-highlight">Three Types of Serializers Based on Usage</a></li></ul></li><li><a href="#field-selection-best-practices" class="table-of-contents__link toc-highlight">Field Selection Best Practices</a><ul><li><a href="#comparing-field-selection-approaches" class="table-of-contents__link toc-highlight">Comparing Field Selection Approaches</a></li></ul></li><li><a href="#using-the-source-parameter" class="table-of-contents__link toc-highlight">Using the <code>source</code> Parameter</a><ul><li><a href="#map-field-names" class="table-of-contents__link toc-highlight">Map Field Names</a></li><li><a href="#access-related-object-data" class="table-of-contents__link toc-highlight">Access Related Object Data</a></li></ul></li><li><a href="#serializermethodfield" class="table-of-contents__link toc-highlight">SerializerMethodField</a><ul><li><a href="#read-only-computed-fields" class="table-of-contents__link toc-highlight">Read-Only Computed Fields</a></li></ul></li><li><a href="#field-level-validation" class="table-of-contents__link toc-highlight">Field-Level Validation</a></li><li><a href="#object-level-validation" class="table-of-contents__link toc-highlight">Object-Level Validation</a><ul><li><a href="#cross-field-validation" class="table-of-contents__link toc-highlight">Cross-Field Validation</a></li></ul></li><li><a href="#passing-values-to-save" class="table-of-contents__link toc-highlight">Passing Values to save()</a><ul><li><a href="#override-values-directly" class="table-of-contents__link toc-highlight">Override Values Directly</a></li></ul></li><li><a href="#using-currentuserdefault" class="table-of-contents__link toc-highlight">Using CurrentUserDefault</a><ul><li><a href="#automatic-user-assignment" class="table-of-contents__link toc-highlight">Automatic User Assignment</a></li></ul></li><li><a href="#accessing-initial-data" class="table-of-contents__link toc-highlight">Accessing Initial Data</a><ul><li><a href="#raw-input-access" class="table-of-contents__link toc-highlight">Raw Input Access</a></li></ul></li><li><a href="#nested-serializers-choosing-the-right-approach" class="table-of-contents__link toc-highlight">Nested Serializers: Choosing the Right Approach</a><ul><li><a href="#comparing-nested-serializer-strategies" class="table-of-contents__link toc-highlight">Comparing Nested Serializer Strategies</a></li><li><a href="#decision-matrix-for-nested-serializers" class="table-of-contents__link toc-highlight">Decision Matrix for Nested Serializers</a></li><li><a href="#detailed-comparison-library-vs-custom" class="table-of-contents__link toc-highlight">Detailed Comparison: Library vs Custom</a></li><li><a href="#handling-multiple-createsupdatesdeletes" class="table-of-contents__link toc-highlight">Handling Multiple Creates/Updates/Deletes</a></li></ul></li><li><a href="#forcing-ordering-in-nested-resources" class="table-of-contents__link toc-highlight">Forcing Ordering in Nested Resources</a><ul><li><a href="#override-data-property" class="table-of-contents__link toc-highlight">Override data Property</a></li></ul></li><li><a href="#performance-considerations" class="table-of-contents__link toc-highlight">Performance Considerations</a><ul><li><a href="#select-related-and-prefetch-related" class="table-of-contents__link toc-highlight">Select Related and Prefetch Related</a></li><li><a href="#avoid-heavy-operations-in-serializermethodfield" class="table-of-contents__link toc-highlight">Avoid Heavy Operations in SerializerMethodField</a></li></ul></li><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">
-          Copyright © 2026
-          <a href="https://pragnakalp.com" target="_blank" rel="noopener noreferrer">
-            Pragnakalp Techlabs
-          </a>.
-          All rights reserved.
-        </div></div></div></footer></div>
+            <style>
+              .footer-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 2rem;
+                font-size: 1.1rem;
+                gap: 1rem;
+                line-height: 1.6;
+              }
+              
+              @media (max-width: 768px) {
+                .footer-container {
+                  flex-direction: column;
+                  text-align: center;
+                  justify-content: center;
+                  font-size: 1rem;
+                }
+              }
+            </style>
+            
+            <div class="footer-container">
+              
+              <div>
+                Copyright © 2026
+                <a href="https://pragnakalp.com" target="_blank" rel="noopener noreferrer" style="color: #0ea5e9; text-decoration: none; font-weight: 500; margin-left: 0.25rem;">
+                  Pragnakalp Techlabs
+                </a>. All rights reserved.
+              </div>
+
+              <div>
+                <strong>Contributors:</strong> Rahul, Nikunj, Neel, Meet, Dhvanil, Mansi, Darshit
+              </div>
+
+            </div>
+          </div></div></div></footer></div>
 </body>
 </html>

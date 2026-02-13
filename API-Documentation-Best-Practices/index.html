@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">API Documentation Best Practices | Django REST Best Practices</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://pragnakalp.github.io/django-rest-best-practices/API-Documentation-Best-Practices"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="API Documentation Best Practices | Django REST Best Practices"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/django-rest-best-practices/img/pk-color-128.png"><link data-rh="true" rel="canonical" href="https://pragnakalp.github.io/django-rest-best-practices/API-Documentation-Best-Practices"><link data-rh="true" rel="alternate" href="https://pragnakalp.github.io/django-rest-best-practices/API-Documentation-Best-Practices" hreflang="en"><link data-rh="true" rel="alternate" href="https://pragnakalp.github.io/django-rest-best-practices/API-Documentation-Best-Practices" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"API Documentation Best Practices","item":"https://pragnakalp.github.io/django-rest-best-practices/API-Documentation-Best-Practices"}]}</script><link rel="stylesheet" href="/django-rest-best-practices/assets/css/styles.b0092fe2.css">
 <script src="/django-rest-best-practices/assets/js/runtime~main.41c4e0ce.js" defer="defer"></script>
-<script src="/django-rest-best-practices/assets/js/main.da86f03e.js" defer="defer"></script>
+<script src="/django-rest-best-practices/assets/js/main.d9be35b9.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -144,11 +144,41 @@
 <li class=""><strong>Keep Updated:</strong> Update documentation with code changes</li>
 </ol>
 <p>Well-documented APIs significantly improve developer experience and adoption rates.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/pragnakalp/django-rest-best-practices/tree/main/docs/API-Documentation-Best-Practices.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/django-rest-best-practices/API-Versioning"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">API Versioning &amp; Architecture Best Practices</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/django-rest-best-practices/Error-Handling-and-Status-Codes"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Production-Grade Error Handling and Status Codes</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#why-documentation-matters" class="table-of-contents__link toc-highlight">Why Documentation Matters</a><ul><li><a href="#key-benefits" class="table-of-contents__link toc-highlight">Key Benefits</a></li></ul></li><li><a href="#documentation-tools" class="table-of-contents__link toc-highlight">Documentation Tools</a><ul><li><a href="#1-drf-spectacular-recommended" class="table-of-contents__link toc-highlight">1. drf-spectacular (Recommended)</a></li><li><a href="#2-drf-yasg" class="table-of-contents__link toc-highlight">2. drf-yasg</a></li></ul></li><li><a href="#documenting-serializers" class="table-of-contents__link toc-highlight">Documenting Serializers</a><ul><li><a href="#add-field-help-text" class="table-of-contents__link toc-highlight">Add Field Help Text</a></li><li><a href="#document-validation-rules" class="table-of-contents__link toc-highlight">Document Validation Rules</a></li></ul></li><li><a href="#documenting-views" class="table-of-contents__link toc-highlight">Documenting Views</a><ul><li><a href="#add-docstrings" class="table-of-contents__link toc-highlight">Add Docstrings</a></li><li><a href="#document-with-extend_schema" class="table-of-contents__link toc-highlight">Document with extend_schema</a></li></ul></li><li><a href="#documenting-authentication" class="table-of-contents__link toc-highlight">Documenting Authentication</a><ul><li><a href="#document-authentication-requirements" class="table-of-contents__link toc-highlight">Document Authentication Requirements</a></li><li><a href="#document-jwt-authentication-endpoints" class="table-of-contents__link toc-highlight">Document JWT Authentication Endpoints</a></li><li><a href="#legacy-token-authentication-not-recommended" class="table-of-contents__link toc-highlight">Legacy Token Authentication (Not Recommended)</a></li></ul></li><li><a href="#documenting-error-responses" class="table-of-contents__link toc-highlight">Documenting Error Responses</a><ul><li><a href="#standard-error-format" class="table-of-contents__link toc-highlight">Standard Error Format</a></li><li><a href="#document-custom-error-responses" class="table-of-contents__link toc-highlight">Document Custom Error Responses</a></li></ul></li><li><a href="#requestresponse-examples" class="table-of-contents__link toc-highlight">Request/Response Examples</a><ul><li><a href="#add-examples-to-serializers" class="table-of-contents__link toc-highlight">Add Examples to Serializers</a></li></ul></li><li><a href="#pagination-documentation" class="table-of-contents__link toc-highlight">Pagination Documentation</a><ul><li><a href="#document-pagination-format" class="table-of-contents__link toc-highlight">Document Pagination Format</a></li></ul></li><li><a href="#filtering-and-searching-documentation" class="table-of-contents__link toc-highlight">Filtering and Searching Documentation</a><ul><li><a href="#document-filter-parameters" class="table-of-contents__link toc-highlight">Document Filter Parameters</a></li></ul></li><li><a href="#rate-limiting-documentation" class="table-of-contents__link toc-highlight">Rate Limiting Documentation</a><ul><li><a href="#document-rate-limits" class="table-of-contents__link toc-highlight">Document Rate Limits</a></li></ul></li><li><a href="#versioning-documentation" class="table-of-contents__link toc-highlight">Versioning Documentation</a><ul><li><a href="#document-api-versions" class="table-of-contents__link toc-highlight">Document API Versions</a></li></ul></li><li><a href="#readme-and-getting-started" class="table-of-contents__link toc-highlight">README and Getting Started</a><ul><li><a href="#create-comprehensive-readme" class="table-of-contents__link toc-highlight">Create Comprehensive README</a></li><li><a href="#using-jwt-tokens" class="table-of-contents__link toc-highlight">Using JWT Tokens</a></li><li><a href="#refreshing-jwt-tokens" class="table-of-contents__link toc-highlight">Refreshing JWT Tokens</a></li><li><a href="#legacy-token-authentication-deprecated" class="table-of-contents__link toc-highlight">Legacy Token Authentication (Deprecated)</a></li></ul></li><li><a href="#quick-start" class="table-of-contents__link toc-highlight">Quick Start</a><ul><li><a href="#list-articles" class="table-of-contents__link toc-highlight">List Articles</a></li><li><a href="#create-article" class="table-of-contents__link toc-highlight">Create Article</a></li><li><a href="#get-article" class="table-of-contents__link toc-highlight">Get Article</a></li></ul></li><li><a href="#rate-limits" class="table-of-contents__link toc-highlight">Rate Limits</a></li><li><a href="#support" class="table-of-contents__link toc-highlight">Support</a></li><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">
-          Copyright © 2026
-          <a href="https://pragnakalp.com" target="_blank" rel="noopener noreferrer">
-            Pragnakalp Techlabs
-          </a>.
-          All rights reserved.
-        </div></div></div></footer></div>
+            <style>
+              .footer-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 2rem;
+                font-size: 1.1rem;
+                gap: 1rem;
+                line-height: 1.6;
+              }
+              
+              @media (max-width: 768px) {
+                .footer-container {
+                  flex-direction: column;
+                  text-align: center;
+                  justify-content: center;
+                  font-size: 1rem;
+                }
+              }
+            </style>
+            
+            <div class="footer-container">
+              
+              <div>
+                Copyright © 2026
+                <a href="https://pragnakalp.com" target="_blank" rel="noopener noreferrer" style="color: #0ea5e9; text-decoration: none; font-weight: 500; margin-left: 0.25rem;">
+                  Pragnakalp Techlabs
+                </a>. All rights reserved.
+              </div>
+
+              <div>
+                <strong>Contributors:</strong> Rahul, Nikunj, Neel, Meet, Dhvanil, Mansi, Darshit
+              </div>
+
+            </div>
+          </div></div></div></footer></div>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Production-Grade Error Handling and Status Codes | Django REST Best Practices</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://pragnakalp.github.io/django-rest-best-practices/Error-Handling-and-Status-Codes"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Production-Grade Error Handling and Status Codes | Django REST Best Practices"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/django-rest-best-practices/img/pk-color-128.png"><link data-rh="true" rel="canonical" href="https://pragnakalp.github.io/django-rest-best-practices/Error-Handling-and-Status-Codes"><link data-rh="true" rel="alternate" href="https://pragnakalp.github.io/django-rest-best-practices/Error-Handling-and-Status-Codes" hreflang="en"><link data-rh="true" rel="alternate" href="https://pragnakalp.github.io/django-rest-best-practices/Error-Handling-and-Status-Codes" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Production-Grade Error Handling and Status Codes","item":"https://pragnakalp.github.io/django-rest-best-practices/Error-Handling-and-Status-Codes"}]}</script><link rel="stylesheet" href="/django-rest-best-practices/assets/css/styles.b0092fe2.css">
 <script src="/django-rest-best-practices/assets/js/runtime~main.41c4e0ce.js" defer="defer"></script>
-<script src="/django-rest-best-practices/assets/js/main.da86f03e.js" defer="defer"></script>
+<script src="/django-rest-best-practices/assets/js/main.d9be35b9.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -153,11 +153,41 @@
 <li class=""><strong>Maintainable</strong>: Centralized error handling logic</li>
 </ul>
 <p>Following these patterns ensures your API is production-ready, secure, and provides excellent developer experience for API consumers.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/pragnakalp/django-rest-best-practices/tree/main/docs/Error-Handling-and-Status-Codes.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/django-rest-best-practices/API-Documentation-Best-Practices"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">API Documentation Best Practices</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/django-rest-best-practices/Testing-Best-Practices"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Testing Best Practices</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#core-principles" class="table-of-contents__link toc-highlight">Core Principles</a><ul><li><a href="#1-single-error-response-format" class="table-of-contents__link toc-highlight">1. Single Error Response Format</a></li><li><a href="#2-thin-views-rich-services" class="table-of-contents__link toc-highlight">2. Thin Views, Rich Services</a></li><li><a href="#3-machine-readable-error-codes" class="table-of-contents__link toc-highlight">3. Machine-Readable Error Codes</a></li><li><a href="#4-safe-logging-practices" class="table-of-contents__link toc-highlight">4. Safe Logging Practices</a></li></ul></li><li><a href="#http-status-codes" class="table-of-contents__link toc-highlight">HTTP Status Codes</a><ul><li><a href="#understanding-status-code-categories" class="table-of-contents__link toc-highlight">Understanding Status Code Categories</a></li><li><a href="#status-code-strategy" class="table-of-contents__link toc-highlight">Status Code Strategy</a></li></ul></li><li><a href="#production-grade-error-handling" class="table-of-contents__link toc-highlight">Production-Grade Error Handling</a><ul><li><a href="#1-domain-exceptions-business-logic-errors" class="table-of-contents__link toc-highlight">1. Domain Exceptions (Business Logic Errors)</a></li><li><a href="#2-service-layer-no-tryexcept-in-views" class="table-of-contents__link toc-highlight">2. Service Layer (No Try/Except in Views)</a></li><li><a href="#3-thin-views-no-business-tryexcept" class="table-of-contents__link toc-highlight">3. Thin Views (No Business Try/Except)</a></li><li><a href="#4-global-exception-handler-single-error-format" class="table-of-contents__link toc-highlight">4. Global Exception Handler (Single Error Format)</a></li><li><a href="#5-standard-error-codes" class="table-of-contents__link toc-highlight">5. Standard Error Codes</a></li><li><a href="#6-safe-logging-practices" class="table-of-contents__link toc-highlight">6. Safe Logging Practices</a></li><li><a href="#7-error-response-examples" class="table-of-contents__link toc-highlight">7. Error Response Examples</a></li></ul></li><li><a href="#common-status-codes" class="table-of-contents__link toc-highlight">Common Status Codes</a><ul><li><a href="#2xx-success-codes" class="table-of-contents__link toc-highlight">2xx Success Codes</a></li><li><a href="#3xx-redirection-codes" class="table-of-contents__link toc-highlight">3xx Redirection Codes</a></li><li><a href="#4xx-client-error-codes" class="table-of-contents__link toc-highlight">4xx Client Error Codes</a></li><li><a href="#5xx-server-error-codes" class="table-of-contents__link toc-highlight">5xx Server Error Codes</a></li></ul></li><li><a href="#testing-error-handling" class="table-of-contents__link toc-highlight">Testing Error Handling</a><ul><li><a href="#test-domain-exceptions" class="table-of-contents__link toc-highlight">Test Domain Exceptions</a></li><li><a href="#test-validation-errors" class="table-of-contents__link toc-highlight">Test Validation Errors</a></li></ul></li><li><a href="#production-deployment-checklist" class="table-of-contents__link toc-highlight">Production Deployment Checklist</a><ul><li><a href="#1-exception-handler-configuration" class="table-of-contents__link toc-highlight">1. Exception Handler Configuration</a></li><li><a href="#2-logging-configuration" class="table-of-contents__link toc-highlight">2. Logging Configuration</a></li><li><a href="#3-monitoring-integration" class="table-of-contents__link toc-highlight">3. Monitoring Integration</a></li></ul></li><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a><ul><li><a href="#production-grade-error-handling-principles" class="table-of-contents__link toc-highlight">Production-Grade Error Handling Principles</a></li><li><a href="#key-benefits" class="table-of-contents__link toc-highlight">Key Benefits</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">
-          Copyright © 2026
-          <a href="https://pragnakalp.com" target="_blank" rel="noopener noreferrer">
-            Pragnakalp Techlabs
-          </a>.
-          All rights reserved.
-        </div></div></div></footer></div>
+            <style>
+              .footer-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 2rem;
+                font-size: 1.1rem;
+                gap: 1rem;
+                line-height: 1.6;
+              }
+              
+              @media (max-width: 768px) {
+                .footer-container {
+                  flex-direction: column;
+                  text-align: center;
+                  justify-content: center;
+                  font-size: 1rem;
+                }
+              }
+            </style>
+            
+            <div class="footer-container">
+              
+              <div>
+                Copyright © 2026
+                <a href="https://pragnakalp.com" target="_blank" rel="noopener noreferrer" style="color: #0ea5e9; text-decoration: none; font-weight: 500; margin-left: 0.25rem;">
+                  Pragnakalp Techlabs
+                </a>. All rights reserved.
+              </div>
+
+              <div>
+                <strong>Contributors:</strong> Rahul, Nikunj, Neel, Meet, Dhvanil, Mansi, Darshit
+              </div>
+
+            </div>
+          </div></div></div></footer></div>
 </body>
 </html>
