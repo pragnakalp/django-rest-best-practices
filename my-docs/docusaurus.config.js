@@ -77,15 +77,46 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
-        copyright: `
-          Copyright © ${new Date().getFullYear()}
-          <a href="https://pragnakalp.com" target="_blank" rel="noopener noreferrer">
-            Pragnakalp Techlabs
-          </a>.
-          All rights reserved.
-        `,
-      },
+          style: 'dark',
+          copyright: `
+            <style>
+              .footer-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 2rem;
+                font-size: 1.1rem;
+                gap: 1rem;
+                line-height: 1.6;
+              }
+              
+              @media (max-width: 768px) {
+                .footer-container {
+                  flex-direction: column;
+                  text-align: center;
+                  justify-content: center;
+                  font-size: 1rem;
+                }
+              }
+            </style>
+            
+            <div class="footer-container">
+              
+              <div>
+                Copyright © ${new Date().getFullYear()}
+                <a href="https://pragnakalp.com" target="_blank" rel="noopener noreferrer" 
+                  style="color: #0ea5e9; text-decoration: none; font-weight: 500; margin-left: 0.25rem;">
+                  Pragnakalp Techlabs
+                </a>. All rights reserved.
+              </div>
+
+              <div>
+                <strong>Contributors:</strong> Rahul, Nikunj, Neel, Meet, Dhvanil, Mansi, Darshit
+              </div>
+
+            </div>
+          `,
+        },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
